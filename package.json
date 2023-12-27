@@ -1,0 +1,11 @@
+{
+  "name": "reactjs",
+  "version": "1.0.0",
+  "description": "This is the practice set of reactjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vaidik Ghelani",
+  "license": "ISC"
+}
