@@ -1,8 +1,8 @@
-#This is the react practice set
+# This is the react practice set
 
 <!-- This is the command to create and start the react app -->
 
-##This is the command to create and start the react app
+## This is the command to create and start the react app
 npm init
 npx create-react-app appname
 cd appname
@@ -10,23 +10,23 @@ npm start
 
 <!-- Default export -->
 
-    ##Default export
-    From any module if data are imported using default export than exactly that data will be exported, at importing point only that data will be accessible using any name, by default
+## Default export
+From any module if data are imported using default export than exactly that data will be exported, at importing point only that data will be accessible using any name, by default
 
 <!-- Named export -->
 
-    ##Named export
-    But if we want to export more than one data, we havr to export it separately like follows,
-        export default a;
-        export {b};
-        export {c};
-        export {d};
-    In which a is exported default and b, c, and d are exported separately, so we can access a as any name but for exporting the data which is not exported by default we have to use same name as use in the export function
-    This is called as named export
+## Named export
+But if we want to export more than one data, we havr to export it separately like follows,
+    export default a;
+    export {b};
+    export {c};
+    export {d};
+In which a is exported default and b, c, and d are exported separately, so we can access a as any name but for exporting the data which is not exported by default we have to use same name as use in the export function
+This is called as named export
 
 <!-- Props -->
 
-##Props
+## Props
 If we create the component, we can use it in any other project.
 For every project we have to change some properties of the component like title and so on.
 Props is some thing that we can pass as an argument to the component.
@@ -35,10 +35,10 @@ We can set the type of the prpos and also set the default properties or values f
 
 <!-- States -->
 
-##States
+## States
 
-    States are react hooks.
-    In the app we have to get the data from the user and the based on their input we have to proceed.
-    To get the data from user we use the state.
-    Intially value of state is define and based on the changing function value of the initial state is changed without reloading the page, so we can say that the state is changed!!
-    State is deifferent from the props, they must be called in a React function component or a custom React Hook function.
+States are react hooks.
+In the app we have to get the data from the user and the based on their input we have to proceed.
+To get the data from user we use the state.
+Intially value of state is define and based on the changing function value of the initial state is changed without reloading the page, so we can say that the state is changed!!
+State is deifferent from the props, they must be called in a React function component or a custom React Hook function.
