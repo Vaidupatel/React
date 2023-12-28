@@ -1,5 +1,5 @@
 # This is the react practice set
-****
+***
 
 <!-- This is the command to create and start the react app -->
 
