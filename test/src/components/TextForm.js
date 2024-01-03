@@ -49,7 +49,7 @@ export default function TextForm(props) {
   };
   return (
     <>
-      <div>
+      <div className="container">
         <h1>{props.heading} </h1>
         <div className="mb-3 my-3">
           <textarea
