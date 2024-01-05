@@ -33,6 +33,7 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          {/* <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px'}}></div> */}
           
           <div className="form-check form-switch">
             <input

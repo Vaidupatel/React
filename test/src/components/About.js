@@ -1,27 +1,7 @@
-import React, { useState } from "react";
-
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
-  const [btnText, setBtnText] = useState("Enable Dark Mode");
-  
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-      setBtnText("Enable Dark Mode");
-    }else{
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-        border : "1px solid white"
-      });
-      setBtnText("Enable White Mode");
-    }
+export default function About(props) {
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "#042743" : "white",
   };
   return (
     <div className="container" style={myStyle}>
@@ -47,7 +27,7 @@ export default function About() {
             data-bs-parent="#accordionExample"
             style={myStyle}
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={myStyle}>
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
@@ -124,15 +104,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="container">
-        <button
-          onClick={toggleStyle}
-          type="button"
-          class="btn btn-primary my-2"
-        >
-          {btnText}
-        </button>
-      </div>
+      <div className="container"></div>
     </div>
   );
 }
