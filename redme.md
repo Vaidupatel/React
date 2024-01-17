@@ -52,9 +52,8 @@
 > ### Components
 
 - We can creatw the JSX component and re use that component just like the functions and can also pass the props
-  > ### YUP
-  >
-  > -YUP is the library that work with the formik and easily handle the error for validation
+> ### YUP
+- YUP is the library that work with the formik and easily handle the error for validation
 
 > ### Formik
 
