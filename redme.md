@@ -61,12 +61,12 @@
 >  6. FastField,
 > > Important Properties of Formik
 >  1. initialValues
-> > To initialize the values of form field,
+>   1. To initialize the values of form field,
 >  3. validationSchema=
-> > In this object we define the schema for validate the input of the form, and can use the YUP also
+>   1. In this object we define the schema for validate the input of the form, and can use the YUP also
 >  4. onSubmit
-> > This function trigger on submit and what ever functionality of this function will perform
+>   1. This function trigger on submit and what ever functionality of this function will perform
 >  5. validateOnChange
-> > It will allow us if we want validation on every change or not, typically true or false
+>   1. It will allow us if we want validation on every change or not, typically true or false
 >  6. validateOnBlur
-> > It will allow us if we want validation on blur/focus change from input field , typically true or false
+>   1. It will allow us if we want validation on blur/focus change from input field , typically true or false
