@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin: auto;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+.btn {
+  width: 5rem;
+  margin-top: 5px;
+}
+.form-control {
+  font-size:20px ;
+  display: flex;
+  flex-direction: column;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
