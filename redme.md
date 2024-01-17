@@ -53,20 +53,20 @@
 > ### Formik
 > - Fomrik is the library that will manage the form validation and submition.
 > > Important Fields of Formik
->  1. Formik,
->  2. Form,
->  3. Field,
->  4. ErrorMessage,
->  5. FieldArray,
->  6. FastField,
+>  1. Formik
+>  2. Form
+>  3. Field
+>  4. ErrorMessage
+>  5. FieldArray
+>  6. FastField
 > > Important Properties of Formik
 >  1. initialValues
->      -- To initialize the values of form field,
+>      - To initialize the values of form field,
 >  3. validationSchema
->      -- In this object we define the schema for validate the input of the form, and can use the YUP also
+>      - In this object we define the schema for validate the input of the form, and can use the YUP also
 >  4. onSubmit
->      -- This function trigger on submit and what ever functionality of this function will perform
+>      - This function trigger on submit and what ever functionality of this function will perform
 >  5. validateOnChange
->      -- It will allow us if we want validation on every change or not, typically true or false
+>      - It will allow us if we want validation on every change or not, typically true or false
 >  6. validateOnBlur
->      -- It will allow us if we want validation on blur/focus change from input field , typically true or false
+>      - It will allow us if we want validation on blur/focus change from input field , typically true or false
