@@ -5,7 +5,6 @@
 <!-- This is the command to create and start the react app -->
 
 > ### This is the command to create and start the react app
-
 > - npm init
 > - npx create-react-app appname
 > - cd appname
@@ -14,13 +13,11 @@
 <!-- Default export -->
 
 > ### Default export
-
 > - From any module if data are imported using default export than exactly that data will be exported, at importing point only that data will be accessible using any name, by default
 
 <!-- Named export -->
 
 > ### Named export
-
 > - But if we want to export more than one data, we havr to export it separately like follows,
 >  - export default a;
 >  - export {b};
@@ -32,7 +29,6 @@
 <!-- Props -->
 
 > ### Props
-
 > - If we create the component, we can use it in any other project.
 > - For every project we have to change some properties of the component like title and so on.
 > - Props is some thing that we can pass as an argument to the component.
@@ -42,7 +38,6 @@
 <!-- States -->
 
 > ### States
-
 > - States are react hooks.
 > - In the app we have to get the data from the user and the based on their input we have to proceed.
 > - To get the data from user we use the state.
@@ -56,7 +51,6 @@
 > - YUP is the library that work with the formik and easily handle the error for validation
 
 > ### Formik
-
 > - Fomrik is the library that will manage the form validation and submition.
 > > Important Fields of Formik
  1. Formik,
