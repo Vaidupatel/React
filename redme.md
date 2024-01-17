@@ -53,11 +53,11 @@
 
 - We can creatw the JSX component and re use that component just like the functions and can also pass the props
 > ### YUP
-- YUP is the library that work with the formik and easily handle the error for validation
+> - YUP is the library that work with the formik and easily handle the error for validation
 
 > ### Formik
 
-- Fomrik is the library that will manage the form validation and submition.
+> - Fomrik is the library that will manage the form validation and submition.
 > > Important Fields of Formik
   1. Formik,
   2. Form,
