@@ -52,14 +52,14 @@
 
 > ### Formik
 >   - Fomrik is the library that will manage the form validation and submition.
->   > Important Fields of Formik
+>>  Important Fields of Formik
 >     1. Formik
 >     2. Form
 >     3. Field
 >     4. ErrorMessage
 >     5. FieldArray
 >     6. FastField
->   > Important Properties of Formik
+>>  Important Properties of Formik
 >     1. initialValues
 >       - To initialize the values of form field,
 >     3. validationSchema
