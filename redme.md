@@ -53,15 +53,15 @@
 > ### Formik
 > - Fomrik is the library that will manage the form validation and submition.
 > > Important Fields of Formik
- 1. Formik,
-  2. Form,
-  3. Field,
-  4. ErrorMessage,
-  5. FieldArray,
-  6. FastField,
+>  1. Formik,
+>  2. Form,
+>  3. Field,
+>  4. ErrorMessage,
+>  5. FieldArray,
+>  6. FastField,
 > > Important Properties of Formik
-  1. initialValues={initialValues}
-  2. validationSchema={validationSchema}
-  3. onSubmit={onSubmit}
-  4. validateOnChange={false}
-  5. validateOnBlur={false}
+>  1. initialValues={initialValues}
+>  2. validationSchema={validationSchema}
+>  3. onSubmit={onSubmit}
+>  4. validateOnChange={false}
+>  5. validateOnBlur={false}
