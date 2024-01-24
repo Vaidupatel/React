@@ -2,13 +2,17 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import noteContext from "../../context/notes/NotesContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
-
-function Notes() {
+import { useNavigate } from "react-router-dom";
+function Notes(props) {
+  const navigate = useNavigate();
   const context = useContext(noteContext);
   const { notes, getNote, editNote } = context;
-
   useEffect(() => {
-    getNote();
+    if (localStorage.getItem("LoginToken")) {
+      getNote();
+    } else {
+      navigate("/login");
+    }
     // eslint-disable-next-line
   }, []);
   const [note, setNote] = useState({
@@ -30,9 +34,10 @@ function Notes() {
   const ref = useRef(null);
   const refClose = useRef(null);
   const handleSubmit = async (e) => {
-    console.log("Updating the note", note);
+    e.preventDefault();
     editNote(note.id, note.etitle, note.edescription, note.etag);
     refClose.current.click();
+    props.showAlert("Updated Successfully", "success");
   };
 
   const onChange = (e) => {
@@ -41,7 +46,7 @@ function Notes() {
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert} />
       <button
         ref={ref}
         type="button"
@@ -72,7 +77,7 @@ function Notes() {
               ></button>
             </div>
             <div className="modal-body">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="my-3">
                   <label htmlFor="etitle" className="form-label">
                     Title
@@ -84,6 +89,8 @@ function Notes() {
                     name="etitle"
                     value={note.etitle}
                     onChange={onChange}
+                    required
+                    minLength={3}
                   />
                 </div>
                 <div className="mb-3">
@@ -97,6 +104,8 @@ function Notes() {
                     name="edescription"
                     value={note.edescription}
                     onChange={onChange}
+                    required
+                    minLength={5}
                   />
                 </div>
                 <div className="mb-3">
@@ -110,35 +119,38 @@ function Notes() {
                     name="etag"
                     value={note.etag}
                     onChange={onChange}
+                    required
                   />
                 </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-outline-danger"
+                    data-bs-dismiss="modal"
+                    ref={refClose}
+                  >
+                    Close
+                  </button>
+                  <button type="submit" className="btn btn-outline-danger">
+                    Update Note
+                  </button>
+                </div>
               </form>
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-                ref={refClose}
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                onClick={handleSubmit}
-                className="btn btn-primary"
-              >
-                Update Note
-              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row container">
         <h2>Your Note</h2>
+        {notes.length === 0 && "No Note To Display"}
         {notes.map((note) => {
           return (
-            <NoteItem key={note._id} updateNote={updateNote} note={note} />
+            <NoteItem
+              key={note._id}
+              updateNote={updateNote}
+              showAlert={props.showAlert}
+              note={note}
+            />
           );
         })}
       </div>

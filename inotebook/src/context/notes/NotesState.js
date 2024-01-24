@@ -5,8 +5,7 @@ const NoteState = (props) => {
   const host = "http://localhost:5000";
   const notesInitials = [];
   const [notes, setNotes] = useState(notesInitials);
-  const authToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVhYjY5OTNkMjNjY2M0ZmU1Yzg3OTNhIn0sImlhdCI6MTcwNTg0MTkxOH0.G88YeRHPxmydnixKpCLCB8muTTTQDCxJcoFAWugwHFY";
+  const authToken = localStorage.getItem("LoginToken");
 
   // --------------------------------------------------------------------------------------------------------------------
   // Get all notes
@@ -56,8 +55,7 @@ const NoteState = (props) => {
         "auth-token": authToken,
       },
     });
-    const json = response.json();
-    console.log(json);
+    console.log(response);
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
@@ -76,9 +74,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const json = response.json();
-    console.log(json);
-
+    console.log(response);
     let newNotes = JSON.parse(JSON.stringify(notes));
     // Logic to edit in client
     for (let index = 0; index < newNotes.length; index++) {

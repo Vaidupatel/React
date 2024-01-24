@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
 import noteContext from "../../context/notes/NotesContext";
 
-function AddNote() {
+function AddNote(props) {
   const context = useContext(noteContext);
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
   const { addNote } = context;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const { title, description, tag } = note;
-    await addNote(title, description, tag);
+    addNote(title, description, tag);
+    props.showAlert("Note Added Successfully", "success");
+    setNote({title: "", description: "", tag: ""});
   };
 
   const onChange = (e) => {
@@ -19,7 +21,7 @@ function AddNote() {
   return (
     <div className="container my-3">
       <h2>Add a Note</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="title" className="form-label">
             Title
@@ -29,8 +31,10 @@ function AddNote() {
             className="form-control"
             id="title"
             name="title"
-            aria-describedby="emailHelp"
+            value={note.title}
             onChange={onChange}
+            minLength={3}
+            required
           />
         </div>
         <div className="mb-3">
@@ -42,7 +46,10 @@ function AddNote() {
             className="form-control"
             id="description"
             name="description"
+            value={note.description}
             onChange={onChange}
+            minLength={5}
+            required
           />
         </div>
         <div className="mb-3">
@@ -54,15 +61,13 @@ function AddNote() {
             className="form-control"
             id="tag"
             name="tag"
+            value={note.tag}
             onChange={onChange}
+            required
           />
         </div>
 
-        <button
-          type="submit"
-          className="btn btn-primary"
-          onClick={handleSubmit}
-        >
+        <button type="submit" className="btn btn-outline-danger">
           Add Note
         </button>
       </form>

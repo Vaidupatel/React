@@ -1,9 +1,18 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 function Navbar() {
+  const navigate = useNavigate();
   let location = useLocation();
+  const handleLogout = () => {
+    localStorage.removeItem("LoginToken");
+    navigate("/login");
+  };
   return (
-    <nav className="navbar navbar-expand-lg bg-primary ">
+    <nav
+      className="navbar sticky-top navbar-expand-lg  bg-dark"
+      data-bs-theme="dark"
+    >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           iNoteBook
@@ -44,17 +53,31 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
+          {!localStorage.getItem("LoginToken") ? (
+            <form className="d-flex" role="search">
+              <Link
+                className="btn btn-outline-danger mx-1"
+                to="/login"
+                role="button"
+              >
+                Login
+              </Link>
+              <Link
+                className="btn btn-outline-danger mx-1"
+                to="/signup"
+                role="button"
+              >
+                Signup
+              </Link>
+            </form>
+          ) : (
+            <button
+              className="btn btn-outline-danger mx-1"
+              onClick={handleLogout}
+            >
+              Logout
             </button>
-          </form>
+          )}
         </div>
       </div>
     </nav>
