@@ -23,7 +23,7 @@ function Signup(props) {
     console.log(json);
     if (json.success) {
       // Save the auth tocken and Redirect
-      localStorage.setItem("SignUpToken", json.authToken);
+      // localStorage.setItem("SignUpToken", json.authToken);
       navigate("/");
       props.showAlert("Account Created successfully ", "success");
     } else {
@@ -35,6 +35,7 @@ function Signup(props) {
   };
   return (
     <div className="container mb-3">
+      <h1>SignUp</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">

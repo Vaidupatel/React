@@ -11,8 +11,8 @@ function Addtodos() {
     setInput("");
   };
   return (
-    <div>
-      <form onSubmit={addTodoHandler}>
+    <div className="container">
+      <form className="container" onSubmit={addTodoHandler}>
         <div className="mb-3">
           <label htmlFor="addTodo" className="form-label">
             Add TODO

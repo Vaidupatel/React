@@ -5,13 +5,13 @@ function Todos() {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
   return (
-    <>
-      <div>TODOs</div>
+    <div className="container">
+      <div className="container">TODOs</div>
       {todos.map((todo) => (
         <li key={todo.id}>
           {todo.text}
           <button
-            className="btn btn-outline-danger"
+            className="btn btn-outline-danger mx-2"
             onClick={() => {
               dispatch(removeTodo(todo.id));
             }}
@@ -20,7 +20,7 @@ function Todos() {
           </button>
         </li>
       ))}
-    </>
+    </div>
   );
 }
 
