@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import { connect } from "mongoose";
 const mongoURI = "mongodb://localhost:27017/inotebook?directConnection=true";
 
 const connectTomongo = async () => {
- await mongoose.connect(mongoURI);
+ await connect(mongoURI);
 };
 
-module.exports = connectTomongo;
+export default connectTomongo;
