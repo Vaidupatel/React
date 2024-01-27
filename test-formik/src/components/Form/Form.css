@@ -1,7 +1,7 @@
 form {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 50vw;
   margin: auto;
   margin-top: 50px;
   font-size: 1.5rem;
@@ -19,4 +19,7 @@ form {
 .error {
   color: red;
   font-size: 12px;
+}
+.btn-box{
+  display: flex;
 }
